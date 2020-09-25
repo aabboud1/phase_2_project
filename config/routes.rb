@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :customers
   resources :products
   resources :stores
+  get "/purchases/new/:id", to: "purchases#new", as: "new_purchase_w_inventory_id"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

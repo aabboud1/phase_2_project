@@ -1,0 +1,12 @@
+<h1>Welcome to <%= @store.name %>!</h1>
+<b>Products Available:</b>
+<ul><% @store.inventories.each{ |inventory| %>
+    <li>
+    <% @inventory = inventory %>
+    <%= inventory.product.name %> - 
+    <% if inventory.quantity > 0 %><%= inventory.quantity %> avaiable! <%= button_to("Buy Now!", new_purchase_path(inventory), method: :get) %>
+    <% else %> SOLD OUT
+    <% end %>
+    </li>
+    <br>
+<% } %></ul>
