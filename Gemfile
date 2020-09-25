@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
