@@ -1,0 +1,10 @@
+<h1>All Products in Our Directory:</h1>
+<ul>
+<% @products.each { |product| %>
+    <li>
+    <b><%= link_to(product.name, product_path(product)) %></b>
+    <% if product.stores == nil %> - CURRENTLY UNAVAILABLE          <!-- if we aren't being sold at any stores -->
+    <% end %>
+    </li>
+<% } %>
+</ul>
