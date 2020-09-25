@@ -13,11 +13,22 @@ Customer.destroy_all
 Product.destroy_all
 
 10.times do
-    Customer.create(name: Faker::Name.first_name, birth_year: [1950..2000].sample)
+    Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand)
 end
 
 target = Store.create(name: "Target", type_of_store: "Grocery")
+Product.all.each do |product|
+    Inventory.create(store_id: target[:id], product_id: product.id, quantity: rand(4))
+end
 
 10.times do
-    Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand)
+    customer = Customer.create(name: Faker::Name.first_name, birth_year: rand(1950..2000))
+    2.times do
+        Purchase.create(customer_id: customer[:id], product_id: Product.all.sample[:id], store_id: Store.first.id)
+    end
 end
+
+
+
+
+#Purchase: customer, product, inventory (store, price)

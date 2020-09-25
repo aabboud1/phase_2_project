@@ -3,6 +3,7 @@ class CreatePurchases < ActiveRecord::Migration[6.0]
     create_table :purchases do |t|
       t.belongs_to :product
       t.belongs_to :customer
+      t.belongs_to :store
 
       t.timestamps
     end

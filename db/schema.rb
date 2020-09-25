@@ -41,10 +41,12 @@ ActiveRecord::Schema.define(version: 2020_09_25_134523) do
   create_table "purchases", force: :cascade do |t|
     t.integer "product_id"
     t.integer "customer_id"
+    t.integer "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_purchases_on_customer_id"
     t.index ["product_id"], name: "index_purchases_on_product_id"
+    t.index ["store_id"], name: "index_purchases_on_store_id"
   end
 
   create_table "stores", force: :cascade do |t|
