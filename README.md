@@ -77,6 +77,6 @@ other tasks: (both)
 
 PHASE 3:
 user login/store login
-....
+.....
 
 FINAL PHASE:
