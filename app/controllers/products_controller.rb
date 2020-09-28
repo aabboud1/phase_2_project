@@ -23,6 +23,6 @@ class ProductsController < ApplicationController
 
     private
     def strong_params
-        params.require(:product).permit(:name, :price, :type_of_product)
+        params.require(:product).permit(:name, :price, :type_of_product, store_ids:[])
     end
 end

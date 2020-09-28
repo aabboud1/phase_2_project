@@ -1,0 +1,25 @@
+<% if @product.errors %>
+    <% @product.errors.full_messages.each do |error| %>
+        <%= error %>
+        <br>
+    <% end %>
+<% end %>
+
+<h1>Add New Product</h1>
+
+<%= form_for(@product) do |f| %>
+    <%= f.label "Product Name" %>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label "Type (optional)" %>
+    <%= f.text_field :type_of_product %>
+    <br><br>
+    <%= f.label "Price" %>
+    <%= f.number_field :price, step: 0.01 %>
+    <br><br>
+    <%= f.label "Store(s) sold at" %>
+    <br>
+    <%= f.collection_check_boxes :store_ids, Store.all, :id, :name %>
+    <br><br>
+    <%= f.submit %>
+<% end %>
