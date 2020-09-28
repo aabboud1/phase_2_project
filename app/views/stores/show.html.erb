@@ -4,8 +4,11 @@
     <li>
     <% @inventory = inventory %>
     <%= inventory.product.name %> - 
-    <% if inventory.quantity > 0 %><%= inventory.quantity %> avaiable?! <%= button_to("Buy Now!", new_purchase_path(inventory), method: :get) %>
-    <% else %> SOLD OUT
+    <% if inventory[:quantity] && inventory[:quantity] > 0 %>
+        <%= inventory[:quantity] %> avaiable! 
+        <%= button_to("Buy Now!", new_purchase_path(inventory), method: :get) %>
+    <% else %>
+        SOLD OUT
     <% end %>
     </li>
     <br>

@@ -1,1 +1,26 @@
-</h1>
+<h1><%= @product.name %></h1>
+    
+<% if !!@product.type_of_product %>                   <!-- basically, if our product's type isn't nil -->
+    <p>Type: <%= @product.type_of_product %></p>
+<% end %>
+
+<% if !!@product.price %>                               <!-- if our product has a price -->
+    <p>Price: $<%= @product.price %></p>
+<% else %>
+    <p>No price specified.</p>
+<% end %>
+
+<% if @product.stores != [] %>                         <!-- if our product belongs to any store(s) -->
+    <p>Available At:</p>
+    <ul>
+    <% @product.stores.each { |store| %>               <!-- damn, we're doing a lot of nested foreach statements today -->
+        <li><%= link_to(store.name, store_path(store)) %></li>
+    <% } %>
+    </ul>
+<% else %>
+    <p>Currently unavailable!</p>                       <!-- if it doesn't belong to any stores, it's sold out -->
+<% end %>
+
+<br><br>
+
+<%= button_to("Back to Product Directory", products_path, method: :get) %>

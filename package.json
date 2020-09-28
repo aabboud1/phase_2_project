@@ -1,5 +1,5 @@
 {
-  "name": "Phase_2_Project",
+  "name": "phase_2_project",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

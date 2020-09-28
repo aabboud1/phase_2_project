@@ -22,3 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+ahmed:
+form (purchase)
+customer views (show, new, create) & controller actions
+
+
+conrad:
+product views (new, create) & controller actions
+
+
+
+
+STUFF TO DO:
+-user login, i.e. cookies
+-able to purchase - i.e. do you have enough money?
+-maybe give inventories an automatic name, idk
+-make sure that when adding product to store, the "inventory" is either created or updated
