@@ -46,7 +46,7 @@ STUFF TO DO:
 -make sure that when adding product to store, the "inventory" is either created or updated
 
 
-PHASE 1:
+PHASE 1/SKATEBOARD:
 basic functionality:
 	-Singular store show page shows products it has, quantity, and links to purchase page
 	-Customer show page shows name, what they've purchased
@@ -57,10 +57,26 @@ basic functionality:
 	-Product show page shows where it can be bought (only one store rn though!), as well as type & price
 
 
-PHASE 2:
+PHASE 2/SCOOTER:
+adding money: (conrad)
+	-customer has a balance
+	-product has price
+	-store has balance
+	-customer cannot buy item if they don't have enough money
+store increasing inventory: (ahmed)
+	-from store page, manage inventory button?
+	-store can specify product & number they want to buy
+	-will increase their stock by however much
+	-either creates a new inventory object, or updates an existing inventory object
+other tasks: (both)
+	-should we do a link on product show page to purchase from the store that is listed?
+	-customer show page - duplicate purchases should just list amount, rather than show up twice
+	-create purchase error message
+	-product show page - specify store is sold out, if store is sold out
 
 
-
+PHASE 3:
+user login/store login
 ....
 
 FINAL PHASE:
