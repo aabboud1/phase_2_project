@@ -7,7 +7,7 @@
 
 <%= form_for @purchase do |f| %>
     <%= f.label :product, "Item to Purchase:" %>
-    <%= collection_select :purchase, :product_id, Product.all, :id, :name, include_blank: 'Select Item'%>
+    <%= collection_select :purchase, :product_id, Product.all, :id, :name_and_price, include_blank: 'Select Item'%>
     <br><br>
     <%= f.label :customer, "User Name:" %>
     <%= collection_select :purchase, :customer_id, Customer.all, :id, :name, include_blank: 'User' %>

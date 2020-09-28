@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :birth_year, presence: true
+    validates :balance, presence: true
 
     def age
         

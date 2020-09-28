@@ -1,9 +1,10 @@
 <h1><%= @customer.name%></h1>
+<b>Current Balance: $<%= @customer.balance %></b>
 
 Products Bought:
 <ul>
-<% @customer.products.each do |product| %>
-    <li><%= product.name %> of type <%= product.type_of_product %></li>
+<% @customer.purchases.each do |purchase| %>
+    <li><%= purchase.product.name %> for <%= purchase.product.price %> on <%= purchase.created_at %></li>
 <% end %>
 
 <!-- if we have duplicates, just put how many of that we've bought, rather than list twice -->

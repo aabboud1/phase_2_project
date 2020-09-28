@@ -77,6 +77,9 @@ other tasks: (both)
 
 PHASE 3:
 user login/store login
+price change?
+	-if we do do that, make sure a purchase records the price AT THE TIME
+refund?
 .....
 
 FINAL PHASE:

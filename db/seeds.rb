@@ -22,7 +22,7 @@ Product.all.each do |product|
 end
 
 10.times do
-    customer = Customer.create(name: Faker::Name.first_name, birth_year: rand(1950..2000))
+    customer = Customer.create(name: Faker::Name.first_name, birth_year: rand(1950..2000), balance: rand(42..173))
     2.times do
         Purchase.create(customer_id: customer[:id], product_id: Product.all.sample[:id], store_id: Store.first.id)
     end

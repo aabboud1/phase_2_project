@@ -7,4 +7,8 @@ class Product < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :price, presence: true, numericality: {greater_than_or_equal_to: 0, message: " must be a positive number"}
+
+    def name_and_price
+        self.name.to_s + " - $" + self.price.to_s
+    end
 end
