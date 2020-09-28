@@ -59,10 +59,10 @@ basic functionality:
 
 PHASE 2/SCOOTER:
 adding money: (conrad)
-	-customer has a balance
-	-product has price
+	DONE-customer has a balance
+	DONE-product has price
 	-store has balance
-	-customer cannot buy item if they don't have enough money
+	DONE-customer cannot buy item if they don't have enough money
 store increasing inventory: (ahmed)
 	-from store page, manage inventory button?
 	-store can specify product & number they want to buy

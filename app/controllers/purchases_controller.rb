@@ -12,14 +12,13 @@ class PurchasesController < ApplicationController
         @purchase = Purchase.new(purchase_params)
         @inventory = Inventory.find_by(store_id: params[:purchase][:store_id], product_id: params[:purchase][:product_id])
         customer = @purchase.customer
-
         if @purchase.valid? && !!@inventory[:quantity] && @inventory[:quantity] > 0
             if customer.balance >= @purchase.product.price
                 @purchase.save
                 @inventory.decrease_quantity
                 redirect_to customer_path(customer)
             else
-                # flash[:my_error] = "Test"
+                @purchase.errors.add(:insufficient, "Funds to Purchase")
                 render :new
             end
         else

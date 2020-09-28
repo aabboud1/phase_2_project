@@ -1,7 +1,6 @@
-
 <% if @purchase.errors %>
     <% @purchase.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
+        <p style = "color:red";><div><%= message %></div></p>
     <%end%>
 <%end%>
 
