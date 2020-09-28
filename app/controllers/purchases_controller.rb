@@ -10,17 +10,21 @@ class PurchasesController < ApplicationController
     
     def create
         @purchase = Purchase.new(purchase_params)
-        @inventory = Inventory.find_by(params[:purchase][:store_id], params[:purchase][:product_id])
-        
-        if @purchase.save && @inventory.quantity > 0 
+        @inventory = Inventory.find_by(store_id: params[:purchase][:store_id], product_id: params[:purchase][:product_id])
+
+        if @purchase.valid? && !!@inventory[:quantity] && @inventory[:quantity] > 0 
             @purchase.save
-            #checkout @inventory not decreasing 
-            @inventory.quantity -= 1
+            @inventory.decrease_quantity
             redirect_to customer_path(@purchase.customer)
         else
             #error message stuff here
+            #need to make custom error messages for !!@inventory[:quantity]
+                #and @inventory[:quantity] > 0
             render :new
+            #redirect_to(new_purchase_path)
         end
+
+
     end
 
 

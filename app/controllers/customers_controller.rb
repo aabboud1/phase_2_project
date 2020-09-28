@@ -6,13 +6,13 @@ class CustomersController < ApplicationController
     end
 
     def new
-        @cutomer = Customer.new
+        @customer = Customer.new
     end
 
     def create
         @customer = Customer.new(customer_params)
         if @customer.save
-            redirect_to inventories_path # customer home page, or purchase page
+            redirect_to products_path # customer home page, or purchase page
         else
             render :new
         end

@@ -13,12 +13,12 @@ Customer.destroy_all
 Product.destroy_all
 
 10.times do
-    Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand)
+    Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand, price: rand(1..30))
 end
 
 target = Store.create(name: "Target", type_of_store: "Grocery")
 Product.all.each do |product|
-    Inventory.create(store_id: target[:id], product_id: product.id, quantity: rand(4))
+    Inventory.create(store_id: target[:id], product_id: product.id, quantity: rand(1..10))
 end
 
 10.times do
