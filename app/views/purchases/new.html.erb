@@ -1,19 +1,19 @@
 
 <% if @purchase.errors %>
-<% @purchase.errors.full_messages.each do |message| %>
-<div><%= message %></div>
-<%end%>
+    <% @purchase.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+    <%end%>
 <%end%>
 
 <%= form_for @purchase do |f| %>
-<%= f.label :product, "Item to Purchase:" %>
-<%= collection_select :purchase, :product_id, Product.all, :id, :name, include_blank: 'Select Item'%>
-<br><br>
-<%= f.label :customer, "User Name:"%>
-<%= f.text_field :customer%>
-<br><br>
-<%= f.label :store, "Select store:" %>
-<%= collection_select :purchase, :store_id, Store.all, :id, :name, include_blank: 'Store' %>
-<br><br>
-<%= f.submit %>
+    <%= f.label :product, "Item to Purchase:" %>
+    <%= collection_select :purchase, :product_id, Product.all, :id, :name, include_blank: 'Select Item'%>
+    <br><br>
+    <%= f.label :customer, "User Name:" %>
+    <%= collection_select :purchase, :customer_id, Customer.all, :id, :name, include_blank: 'User' %>
+    <br><br>
+    <%= f.label :store, "Select store:" %>
+    <%= collection_select :purchase, :store_id, Store.all, :id, :name, include_blank: 'Store' %>
+    <br><br>
+    <%= f.submit %>
 <% end %>

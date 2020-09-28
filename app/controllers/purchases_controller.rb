@@ -9,13 +9,14 @@ class PurchasesController < ApplicationController
     end
     
     def create
-        #throwing error, need to make strong params and pass them possibly take off inventroy and inven.find
+        @purchase = Purchase.new(purchase_params)
+        @inventory = Inventory.find_by(params[:purchase][:store_id], params[:purchase][:product_id])
         
-        @purchase = Purchase.new
-        inventory = Inventory.find_by(params[:purchase][:store_id], params[:purchase][:product_id])
-        if @purchase.save && inventory.quantity > 0 
-            @purchase = Purchase.save(purchase_params)
-            Inventory.find_by(params[:purchase][:store_id], params[:purchase][:product_id].quantity).quantity -= 1
+        if @purchase.save && @inventory.quantity > 0 
+            @purchase.save
+            #checkout @inventory not decreasing 
+            @inventory.quantity -= 1
+            redirect_to customer_path(@purchase.customer)
         else
             #error message stuff here
             render :new
