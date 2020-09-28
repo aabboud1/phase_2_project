@@ -4,9 +4,12 @@ class Inventory < ApplicationRecord
 
     has_many :purchases
 
-    def increase_quantity(amount = 1) #maybe add in a positive number check - shouldn't be able to increase_stock by negative numbers. i mean, or make amount absolute value
-        self.quantity += amount
-        self.update
+    def increase_quantity(amount) #maybe add in a positive number check - shouldn't be able to increase_stock by negative numbers. i mean, or make amount absolute value
+        if amount >= 0
+            self.update(quantity: self[:quantity] + amount)
+        else
+            return false
+        end
     end
 
     def decrease_quantity(amount = 1) #same as above, shouldn't be able to decrease by negative numbers
