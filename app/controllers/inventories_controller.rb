@@ -1,15 +1,22 @@
 class InventoriesController < ApplicationController
     def new
-        @inventory = Inventory.new
+    end
+    
+    def create
     end
 
-    def create
-        @inventory = Inventory.new(strong_params)
+    def edit
+        @inventory = Inventory.find(params[:id])
+    end
+
+    def update
+        @inventory = Inventory.find(params[:id])
+        @inventory.update(strong_params)
         @existing_inventory = Inventory.find_by(store_id: params[:inventory][:store_id], product_id: params[:inventory][:product_id])
 
-        if @inventory.valid? && !!@existing_inventory[:quantity]
-            @inventory.save
+        if @inventory.valid? #&& !!@existing_inventory[:quantity]
             @existing_inventory.increase_quantity(@inventory.quantity)
+            @inventory.save
             redirect_to product_path(@inventory.product_id)
         else
             #error message stuff here
@@ -20,11 +27,6 @@ class InventoriesController < ApplicationController
         end
     end
 
-    def edit
-    end
-
-    def update
-    end
 
     private
     def strong_params
