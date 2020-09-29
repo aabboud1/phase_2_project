@@ -88,6 +88,8 @@ AHMED:
 	-debug product showing up multiple times on store page
 BOTH?
 
+NOTES FOR CONRAD:
+-store linking id? ie when making user, can input a specific code to prove they are a store
 
 
 PHASE 3:

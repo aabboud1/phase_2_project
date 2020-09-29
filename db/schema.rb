@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_201056) do
+ActiveRecord::Schema.define(version: 2020_09_29_200001) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_09_28_201056) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "balance"
+    t.string "password_digest"
+    t.string "manager_of_store_id"
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_09_28_201056) do
     t.string "type_of_store"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "manager_code"
   end
 
 end
