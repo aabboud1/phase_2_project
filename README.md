@@ -70,7 +70,7 @@ store increasing inventory: (ahmed)
 	-either creates a new inventory object, or updates an existing inventory object
 other tasks: (both)
 	-should we do a link on product show page to purchase from the store that is listed?
-	-customer show page - duplicate purchases should just list amount, rather than show up twice
+	DONE(each transaction has date)-customer show page - duplicate purchases should just list amount, rather than show up twice
 	-create purchase error message
 	-product show page - specify store is sold out, if store is sold out
 

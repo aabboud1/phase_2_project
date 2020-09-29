@@ -12,6 +12,7 @@ class Purchase < ApplicationRecord
     end
 
     private
+
     def find_month_name(month)
         case month
             when 1
