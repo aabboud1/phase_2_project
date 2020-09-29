@@ -1,4 +1,7 @@
 class InventoriesController < ApplicationController
+    
+    before_action :manager_authorized
+    
     def new
         @inventory = Inventory.new
     end

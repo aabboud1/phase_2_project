@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
             redirect_to login_path
         end
     end
+
+    def manager_authorized
+        if !logged_in? || current_user.manager_of_store_id == nil
+            flash[:message] = "You must be a manager to access this."
+            redirect_to login_path
+        end
+    end
 end

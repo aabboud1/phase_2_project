@@ -1,8 +1,11 @@
 class PurchasesController < ApplicationController
+    
+    before_action :authorized
+    
     def new
         if params[:format]
             @inventory = Inventory.find(params[:format])
-            @purchase = Purchase.new(store_id: @inventory[:store_id], product_id: @inventory[:product_id])
+            @purchase = Purchase.new(store_id: @inventory[:store_id], product_id: @inventory[:product_id], customer_id: session[:customer_id])
         else
             @purchase = Purchase.new
         end
