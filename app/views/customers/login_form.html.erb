@@ -1,0 +1,11 @@
+<%= flash.now[:no_user] %>
+<%= flash[:message] %>
+
+<!-- SEE 24-AUTHORIZATION FOR MORE INFO -->
+<!-- conrad: insert explanation here -->
+
+<%= form_tag login_path do %>
+    <%= label_tag "Your name" %>
+    <%= text_field_tag :name %>
+    <%= submit_tag "Login" %>
+<% end %>

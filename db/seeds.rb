@@ -22,11 +22,15 @@ Product.all.each do |product|
 end
 
 10.times do
-    customer = Customer.create(name: Faker::Name.first_name, birth_year: rand(1950..2000), balance: rand(42..173))
+    customer = Customer.create(name: Faker::Name.first_name, birth_year: rand(1950..2000), balance: rand(42..173), password: Faker::Games::Pokemon.name)
     2.times do
         Purchase.create(customer_id: customer[:id], product_id: Product.all.sample[:id], store_id: Store.first.id)
     end
 end
+
+#DEBUG PRODUCT - way too expensive!
+p = Product.create(name: "Expensive Test Weed", type_of_product: "Debugging to make sure users can't buy out of their price range", price: 1000)
+Inventory.create(store_id: target[:id], product_id: p[:id], quantity: 100)
 
 
 
