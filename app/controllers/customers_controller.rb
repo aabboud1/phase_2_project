@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
 
     def show
         @customer = Customer.find(params[:id])
-        
+        # @customer.purchases.map {|f| f.product_id} 
     end
 
     def new
