@@ -64,15 +64,30 @@ adding money: (conrad)
 	-store has balance
 	DONE-customer cannot buy item if they don't have enough money
 store increasing inventory: (ahmed)
-	-from store page, manage inventory button?
-	-store can specify product & number they want to buy
-	-will increase their stock by however much
+	DONE-from store page, manage inventory button?
+	DONE-store can specify product & number they want to buy
+	DONE-will increase their stock by however much
 	-either creates a new inventory object, or updates an existing inventory object
 other tasks: (both)
 	-should we do a link on product show page to purchase from the store that is listed?
 	DONE(each transaction has date)-customer show page - duplicate purchases should just list amount, rather than show up twice
 	-create purchase error message
 	-product show page - specify store is sold out, if store is sold out
+
+
+
+TUES, 9/29:
+---
+CONRAD:
+	-more purchase error message
+	-cookie/session stuff
+AHMED:
+	-new vs. edit inventory
+		-make sure there's validation for new inventory, ie if that already exists, throw error OR just have it update instead
+	-debug store showing up multiple times on product page
+	-debug product showing up multiple times on store page
+BOTH?
+
 
 
 PHASE 3:
