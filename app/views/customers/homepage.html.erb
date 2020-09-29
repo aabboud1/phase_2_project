@@ -1,0 +1,14 @@
+<%= flash[:message] %>
+
+<h1>Welcome to our App!</h1>
+
+<% if logged_in? %>
+    <%= "Your name is " + current_user_name %>
+<% else %>
+    <%= link_to("Please log in!", login_path) %>
+<% end %>
+<br><br>
+<%= button_to("Product Directory", products_path, method: :get) %>
+<br><br>
+<% store = Store.first %>
+<%= button_to("Store Page", store_path(store), method: :get) %>

@@ -87,9 +87,39 @@ AHMED:
 	-debug store showing up multiple times on product page
 	-debug product showing up multiple times on store page
 BOTH?
+-------
+STUFF TO DO:
+-Store page: add button for new/edit inventory?
+	-visible only to managers?
 
-NOTES FOR CONRAD:
--store linking id? ie when making user, can input a specific code to prove they are a store
+-Login: don't allow login/redirect if we're already logged in
+
+-IF MULTIPLE STORES: make it so that either
+	a) manager has to be editing THEIR stores inventory
+	b) lock it in on page
+-Header: make this a thing -- say username, login/logout, link to homepage, balance
+
+-Purchase: no more dropdown for user, locked in based on current login
+	-quantity?
+	-cart?
+
+-Homepage (conrad wants to do this!)
+	-login/create user
+	-product directory
+	-store directory
+	-my user page
+	-stretch: last/favorite purchase
+	-manager? - is this just on store show page, or the ACTUAL homepage?
+		-potentially render a different partial based on if you're manager or not
+
+
+
+
+
+
+
+
+
 
 
 PHASE 3:

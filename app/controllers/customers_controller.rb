@@ -40,7 +40,7 @@ class CustomersController < ApplicationController
         customer = Customer.find_by(name: params[:name])
         if customer #&& user.authenticate(params[:password])
             session[:customer_id] = customer.id
-            redirect_to(products_path)
+            redirect_to(homepage_path)
         else
             flash.now[:no_user] = "Check your name is spelt correctly."
             render :login_form
@@ -50,7 +50,10 @@ class CustomersController < ApplicationController
     def logout
         session.clear
         flash[:message] = "You have been logged out."
-        redirect_to login_path
+        redirect_to homepage_path
+    end
+
+    def homepage
     end
 
 
