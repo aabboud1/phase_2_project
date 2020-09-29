@@ -10,6 +10,18 @@ class CustomersController < ApplicationController
     end
 
     def create
+        manager_code = params[:customer][:manager_of_store_id] #if we inputted an id to prove we're manager of a store
+        if manager_code != nil
+            store = Store.find_by(manager_code: manager_code) #check to see if any store has the manager code we inputted
+            if store != nil #if any of those stores actually did have that code
+                params[:customer][:manager_of_store_id] = store[:id] #save what store id we're a manager over
+            else
+                params[:customer][:manager_of_store_id] = nil #we are not a manager
+            end
+        else
+            params[:customer][:manager_of_store_id] = nil #we are not a manager
+        end
+
         @customer = Customer.new(customer_params)
         if @customer.save
             session[:customer_id] = @customer.id
@@ -45,6 +57,6 @@ class CustomersController < ApplicationController
     private
 
     def customer_params
-        params.require(:customer).permit(:name, :birth_year, :balance, :password)
+        params.require(:customer).permit(:name, :birth_year, :balance, :password, :manager_of_store_id)
     end
 end

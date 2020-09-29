@@ -11,5 +11,14 @@
 <%= f.label :birth_year %>
 <%= f.select(:birth_year, 1950..2000)%>
 <br>
+<%= f.label "Enter password" %>
+<%= f.password_field :password %>
+<br>
+<%= f.label "DEBUG PURPOSES: Balance in USD" %>
+<%= f.number_field :balance %>
+<br>
+<%= f.label "Enter Manager Code (optional)" %>
+<%= f.text_field :manager_of_store_id %>
+<br><br>
 <%= f.submit %>
 <% end %>

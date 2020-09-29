@@ -16,7 +16,7 @@ Product.destroy_all
     Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand, price: rand(1..30))
 end
 
-target = Store.create(name: "Target", type_of_store: "Grocery")
+target = Store.create(name: "Target", type_of_store: "Grocery", manager_code: "test")
 Product.all.each do |product|
     Inventory.create(store_id: target[:id], product_id: product.id, quantity: rand(1..10))
 end
