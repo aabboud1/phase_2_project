@@ -38,7 +38,7 @@ class InventoriesController < ApplicationController
             #error message stuff here
             #need to make custom error messages for !!@inventory[:quantity]
                 #and @inventory[:quantity] > 0
-            render :new
+            render :edit
             #redirect_to(new_purchase_path)
         end
     end

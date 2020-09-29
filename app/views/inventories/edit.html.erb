@@ -11,9 +11,6 @@
     <%= f.label :store, "Select store:" %>
     <%= f.collection_select :store_id, Store.all, :id, :name, include_blank: 'Store' %>
     <br><br>
-    <%= f.label :product, "Product Number:" %>
-    <%= f.text_field :product_id, :value => %>
-    <br><br>
     <%= f.label :quantity, "Amount:" %>
     <%= f.number_field :quantity, in: 1.0..50.0, step: 1 %>
     <br><br>
