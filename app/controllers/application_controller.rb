@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
     #see 24-authorization for more info
 
-    helper_method :current_user, :current_user_name, :logged_in?
+    helper_method :current_user, :current_user_name, :logged_in?, :manager_authorized
 
     def current_user
         Customer.find_by(id: session[:customer_id])
