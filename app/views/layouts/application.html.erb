@@ -16,7 +16,8 @@
         <div>Logged in as <%= link_to(current_user_name, customer_path(current_user)) %> -- Balance: $<%= current_user.balance %></div>
 
         <% if manager? %>
-          <div><b>Manager of <%= Store.find(current_user.manager_of_store_id).name %></b></div>
+          <% my_store = Store.find(current_user.manager_of_store_id) %>
+          <div><b>Manager of <%= link_to(my_store.name, store_path(my_store)) %></b></div>
           <!-- #this will print what store we're a manager of, if we are one -->
         <% end %>
 
