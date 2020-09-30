@@ -105,7 +105,7 @@ AHMED
 
 CONRAD
 -Homepage (conrad wants to do this!)
-	-login/create user
+	DONE-login/create user
 	DONE-product directory
 	DONE-store directory
 	-my user page
@@ -118,7 +118,10 @@ CONRAD
 BOTH
 
 
-
+----
+conrad notes:
+login/loutout redirect back to last page?
+need purchase to, you know, actually deduct money from user
 
 
 
