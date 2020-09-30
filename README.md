@@ -112,7 +112,7 @@ CONRAD
 	-stretch: last/favorite purchase
 	-manager? - is this just on store show page, or the ACTUAL homepage?
 		-potentially render a different partial based on if you're manager or not
--Header: make this a thing -- say username, login/logout, link to homepage, balance
+DONE-Header: make this a thing -- say username, login/logout, link to homepage, balance
 -Login: don't allow login/redirect if we're already logged in
 
 BOTH
