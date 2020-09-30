@@ -1,4 +1,4 @@
-<h1> Order new Inventory </h1>
+<h1> Order new Inventory for <%= @store.name %></h1>
 
 
 <% if @inventory.errors %>
@@ -8,9 +8,7 @@
 <%end%>
 
 <%= form_for @inventory do |f| %>
-    <%= f.label :store, "Select store:" %>
-    <%= f.collection_select :store_id, Store.all, :id, :name, include_blank: 'Store' %>
-    <br><br>
+    <%= f.hidden_field :store_id %>
     <%= f.label :product, "New Item to add" %>
     <%= f.collection_select :product_id, Product.all, :id, :name, include_blank: 'Select Item'%>
     <br><br>
