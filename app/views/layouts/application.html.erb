@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <!-- #see 24-authorization for more info -->
+    <div class="header">
+      <% if logged_in? %>
+        <div>Logged in as <%= current_user_name %></div>
+
+        <% if manager? %>
+          <div><b>Manager of <%= Store.find(current_user.manager_of_store_id).name %></b></div>
+          <!-- #this will print what store we're a manager of, if we are one -->
+        <% end %>
+
+        <div> <%= link_to "Logout", logout_path %></div>
+      <% else %>
+        <div> <%= link_to "Login", login_path %>
+      <% end %>
+        <div><%= link_to "Home Page", homepage_path %></div>
+    </div>
     <%= yield %>
   </body>
 </html>
