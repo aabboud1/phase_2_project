@@ -6,7 +6,7 @@
     <%= inventory.product.name %> - 
     <% if inventory[:quantity] && inventory[:quantity] > 0 %>
         <%= inventory[:quantity] %> avaiable! 
-        <%= button_to("Buy Now!", new_purchase_path(inventory), method: :get) %>
+        <%= button_to("Buy Now for $" + inventory.product.price.to_s + "!", new_purchase_path(inventory), method: :get) %>
     <% else %>
         SOLD OUT
     <% end %>

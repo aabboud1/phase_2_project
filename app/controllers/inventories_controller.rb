@@ -16,7 +16,6 @@ class InventoriesController < ApplicationController
         @inventory = Inventory.new(strong_params)
         @existing_inventory = Inventory.find_by(store_id: params[:inventory][:store_id], product_id: params[:inventory][:product_id])
         #if we already have an inventory with our current inventory's params
-
         if @inventory.valid? #if we made a valid inventory
             if @existing_inventory #if our check for existing inventory came up with something
                 @existing_inventory.increase_quantity(@inventory.quantity) #instead of making a new inventory item, we'll add the quantity to our existing inventory item
@@ -39,13 +38,16 @@ class InventoriesController < ApplicationController
     end
 
     def update
+
         @inventory = Inventory.find(params[:id])
+        @product = @inventory.product
         @inventory.update(strong_params)
         # @existing_inventory = Inventory.find_by(store_id: params[:inventory][:store_id], product_id: params[:inventory][:product_id])
 
         if @inventory.valid? #&& !!@existing_inventory[:quantity]
-            
+            #byebug
             # @existing_inventory.increase_quantity(@inventory.quantity)
+            @product.update(price: params[:price])
             @inventory.save
             redirect_to product_path(@inventory.product_id)
         else

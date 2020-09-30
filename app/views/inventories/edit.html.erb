@@ -12,5 +12,8 @@
     <%= f.label :quantity, "Amount:" %>
     <%= f.number_field :quantity, in: 1.0..50.0, step: 1 %>
     <br><br>
+    <%= f.label "Cost (currently $" + @inventory.product.price.to_s + ")" %>
+    <!-- if we had more time, we could have each store have different values. womp womp -->
+    <%= number_field(@test, :price) %>
     <%= f.submit %>
 <% end %>
