@@ -28,9 +28,15 @@ end
     end
 end
 
+#DEBUG USER - conrad is manager. password is password
+Customer.create(name: "Conrad", birth_year: 1995, balance: 100, password: "password", manager_of_store_id: target[:id])
+
 #DEBUG PRODUCT - way too expensive!
 p = Product.create(name: "Expensive Test Weed", type_of_product: "Debugging to make sure users can't buy out of their price range", price: 1000)
 Inventory.create(store_id: target[:id], product_id: p[:id], quantity: 100)
+
+#DEBUG PRODUCT - not in stores
+Product.create(name: "Secret Weed", type_of_product: "Not in Target after seeding", price: 2)
 
 
 

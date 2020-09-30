@@ -18,6 +18,8 @@ class PurchasesController < ApplicationController
         if @purchase.valid? && !!@inventory[:quantity] && @inventory[:quantity] > 0
             if customer.balance >= @purchase.product.price
                 @purchase.save
+                #byebug
+                customer.make_purchase(@purchase.product.price)
                 @inventory.decrease_quantity
                 redirect_to customer_path(customer)
             else

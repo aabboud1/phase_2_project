@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/logout", to: "customers#logout"
   get "/", to: "customers#homepage", as: "homepage"
   get "stores/:id/owner", to: 'stores#owner_show', as: "store_owner"
+  get "/inventory/new"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

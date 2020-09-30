@@ -17,7 +17,7 @@
 
         <% if manager? %>
           <% my_store = Store.find(current_user.manager_of_store_id) %>
-          <div><b>Manager of <%= link_to(my_store.name, store_path(my_store)) %></b></div>
+          <div><b>Manager of <%= link_to(my_store.name, store_owner_path(my_store)) %></b></div>
           <!-- #this will print what store we're a manager of, if we are one -->
         <% end %>
 

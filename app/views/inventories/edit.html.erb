@@ -8,9 +8,7 @@
 <%end%>
 
 <%= form_for @inventory do |f| %>
-    <%= f.label :store, "Select store:" %>
-    <%= f.collection_select :store_id, Store.all, :id, :name, include_blank: 'Store' %>
-    <br><br>
+    <%= f.hidden_field :store_id %>
     <%= f.label :quantity, "Amount:" %>
     <%= f.number_field :quantity, in: 1.0..50.0, step: 1 %>
     <br><br>

@@ -14,7 +14,7 @@
     <p>Available At:</p>
     <ul>
     <% @product.stores.each { |store| %>               <!-- damn, we're doing a lot of nested foreach statements today -->
-        <li><%= link_to(store.name, store_path(store)) %></li>
+        <li><%= link_to(store.name, store_path(store)) %> - Quantity Available: <%= Inventory.find_by(store_id: store[:id], product_id: @product[:id]).quantity %></li>
     <% } %>
     </ul>
 <% else %>

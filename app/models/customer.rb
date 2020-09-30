@@ -8,9 +8,14 @@ class Customer < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :birth_year, presence: true
     validates :balance, presence: true
-    validates :password, presence: true
+    #DO NOT VALIDATES PASSWORD
 
     def age
         
+    end
+
+    def make_purchase(price)
+        self.balance -= price
+        self.save
     end
 end

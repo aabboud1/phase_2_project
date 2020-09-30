@@ -3,13 +3,8 @@
 <ul><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
-    <%= inventory.product.name %> - 
-    <% if inventory[:quantity] && inventory[:quantity] > 0 %>
-        <%= inventory[:quantity] %> avaiable! 
-        <%= button_to("Update Inventory", edit_inventory_path(inventory), method: :get) %>
-    <% else %>
-        SOLD OUT
-    <% end %>
+    <%= inventory.product.name %> - <%= inventory[:quantity] %> avaiable! 
+    <%= button_to("Update Inventory", edit_inventory_path(inventory), method: :get) %>
     </li>
     <br>
 <% } %></ul>
