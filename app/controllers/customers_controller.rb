@@ -33,16 +33,21 @@ class CustomersController < ApplicationController
 
     #see 24-authorization for more info
     def login
-        render :login_form
+        if !logged_in? #if we aren't logged in, go to login page
+            render :login_form
+        else
+            flash[:message] = "You're already logged in!"
+            redirect_to homepage_path
+        end
     end
 
     def process_login
         customer = Customer.find_by(name: params[:name])
-        if customer #&& user.authenticate(params[:password])
+        if customer && customer.authenticate(params[:password])
             session[:customer_id] = customer.id
             redirect_to(homepage_path)
         else
-            flash.now[:no_user] = "Check your name is spelt correctly."
+            flash.now[:no_user] = "Check your name or password is spelt correctly."
             render :login_form
         end
     end

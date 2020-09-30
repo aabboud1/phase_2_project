@@ -105,20 +105,23 @@ AHMED
 
 CONRAD
 -Homepage (conrad wants to do this!)
-	-login/create user
+	DONE-login/create user
 	DONE-product directory
 	DONE-store directory
-	-my user page
+	ALREADY DONE?-my user page
 	-stretch: last/favorite purchase
 	-manager? - is this just on store show page, or the ACTUAL homepage?
 		-potentially render a different partial based on if you're manager or not
--Header: make this a thing -- say username, login/logout, link to homepage, balance
--Login: don't allow login/redirect if we're already logged in
+DONE-Header: make this a thing -- say username, login/logout, link to homepage, balance
+DONE-Login: don't allow login/redirect if we're already logged in
 
 BOTH
 
 
-
+----
+conrad notes:
+login/loutout redirect back to last page?
+need purchase to, you know, actually deduct money from user
 
 
 
