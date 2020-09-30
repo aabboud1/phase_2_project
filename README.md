@@ -120,18 +120,23 @@ BOTH
 
 ----
 conrad notes:
-login/loutout redirect back to last page?
-need purchase to, you know, actually deduct money from user
+DONE login/logout redirect back to last page?
+DONE need purchase to, you know, actually deduct money from user
 
 
 
 
 
-PHASE 3:
-user login/store login
+
+
+
 price change?
 	-if we do do that, make sure a purchase records the price AT THE TIME
 refund?
+//////more than one store
+-cart?? oof
+	-instead of purchase, add to cart
+	-button to go to cart page
+	-cart page shows "QUANTITY ITEM - TOTAL PRICE" for each item
+	-bottom button creates purchases for everything in cart
 .....
-
-FINAL PHASE:

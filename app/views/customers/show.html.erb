@@ -4,7 +4,7 @@
 Products Bought:
 <ul>
 <% @customer.purchases.each do |purchase| %>
-    <li><%= purchase.product.name %> for $<%= purchase.product.price %> on <%= purchase.print_time %></li>
+    <li><%= purchase.product.name %> for $<%= purchase.cost %> on <%= purchase.print_time %></li>
 <% end %>
 
 <!-- if we have duplicates, just put how many of that we've bought, rather than list twice -->

@@ -12,14 +12,16 @@ class PurchasesController < ApplicationController
     end
     
     def create
+        #the cost param equals the purchase product's price
+        params[:purchase][:cost] = Product.find(params[:purchase][:product_id]).price
         @purchase = Purchase.new(purchase_params)
         @inventory = Inventory.find_by(store_id: params[:purchase][:store_id], product_id: params[:purchase][:product_id])
         customer = @purchase.customer
         if @purchase.valid? && !!@inventory[:quantity] && @inventory[:quantity] > 0
-            if customer.balance >= @purchase.product.price
+            if customer.balance >= @purchase.cost
                 @purchase.save
                 #byebug
-                customer.make_purchase(@purchase.product.price)
+                customer.make_purchase(@purchase.cost)
                 @inventory.decrease_quantity
                 redirect_to customer_path(customer)
             else
@@ -41,7 +43,7 @@ class PurchasesController < ApplicationController
     private
 
     def purchase_params
-        params.require(:purchase).permit(:customer_id, :product_id, :store_id)
+        params.require(:purchase).permit(:customer_id, :product_id, :store_id, :cost)
     end
     
 end

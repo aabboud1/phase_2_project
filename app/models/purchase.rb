@@ -6,6 +6,7 @@ class Purchase < ApplicationRecord
     # validates :product_id, presence: true
     # validates :customer_id, presence: true
     # validates :store_id, presence: true
+    validates :cost, presence: true
 
     def print_time
         "#{find_month_name(self.created_at.month)} #{self.created_at.day}, #{self.created_at.year}"
