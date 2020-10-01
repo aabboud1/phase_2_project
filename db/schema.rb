@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_203411) do
+ActiveRecord::Schema.define(version: 2020_10_01_212431) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_203411) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "type_of_product"
-    t.integer "price"
+    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_203411) do
     t.integer "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "cost"
+    t.float "cost"
     t.index ["customer_id"], name: "index_purchases_on_customer_id"
     t.index ["product_id"], name: "index_purchases_on_product_id"
     t.index ["store_id"], name: "index_purchases_on_store_id"

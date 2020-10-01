@@ -9,7 +9,7 @@
     <b><%= inventory.product.name %></b> - 
     <% if inventory[:quantity] && inventory[:quantity] > 0 %>
         <%= inventory[:quantity] %> avaiable! 
-        <%= button_to("Buy Now for $" + inventory.product.price.to_s + "!", new_purchase_path(inventory), method: :get, class: "store_button") %>
+        <%= button_to("Buy Now for $" + number_with_precision(inventory.product.price, precision: 2).to_s + "!", new_purchase_path(inventory), method: :get, class: "store_button") %>
     <% else %>
         <p class="fireText">SOLD OUT</p>
     <% end %>

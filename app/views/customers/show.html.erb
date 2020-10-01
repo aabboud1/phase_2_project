@@ -1,12 +1,12 @@
-<div style="margin-left: 10px">
-<h1><%= @customer.name%></h1>
+<div class="homepage">
+<h1 class="fireText"><%= @customer.name%></h1>
 <div><img src="https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTU3OTIzNjYwNjc1Mjk1MTgy/what-drove-evel-knievel-to-keep-battering-his-bodys-featured-photo.jpg", alt="Evel Knievel, source: history.com"></div>
-<b>Current Balance: $<%= @customer.balance %></b>
+<b>Current Balance: $<%= number_with_precision(@customer.balance, precision: 2) %></b>
 <br><br>
-Products Bought:
+<b>Products Bought:</b>
 <ul>
 <% @customer.purchases.each do |purchase| %>
-    <li><%= purchase.product.name %> for $<%= purchase.cost %> on <%= purchase.print_time %></li>
+    <li><b><%= purchase.product.name %></b> for <b>$<%= number_with_precision(purchase.cost, precision: 2) %></b> on <b><%= purchase.print_time %></b></li>
 <% end %>
 
 <!-- if we have duplicates, just put how many of that we've bought, rather than list twice -->

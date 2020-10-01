@@ -6,7 +6,7 @@
 <% end %>
 
 <% if !!@product.price %>                               <!-- if our product has a price -->
-    <p><b>Price:</b> $<%= @product.price %></p>
+    <p><b>Price:</b> $<%= number_with_precision(@product.price, precision: 2) %></p>
 <% else %>
     <p>No price specified.</p>
 <% end %>

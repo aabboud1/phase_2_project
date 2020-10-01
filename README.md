@@ -29,7 +29,7 @@ AS OF 10/1, THINGS LEFT TO DO:
 -styling adjustments
 	-user show page
 	-potentially product show page? idk, we don't actually display this anymore
-	-purchase page
+	-purchase page (DONE?)
 
 
 ahmed:

@@ -1,17 +1,18 @@
-
+<div style="margin-left: 10px;">
 <% if @purchase.errors %>
     <% @purchase.errors.full_messages.each do |message| %>
         <p style = "color:red";><div><%= message %></div></p>
     <%end%>
 <%end%>
 
-<h1>Make your purchase from <%= @purchase.store.name %></h1>
-
+<h1 class="fireText">Make your purchase from <%= @purchase.store.name %></h1>
+<br>
 <%= form_for @purchase do |f| %>
-    <%= f.label :product, "Item to Purchase:" %>
+    <b><%= f.label :product, "Item to Purchase:" %></b>
     <%= collection_select :purchase, :product_id, @purchase.store.products, :id, :name_and_price, include_blank: 'Select Item'%>
     <br><br>
     <%= f.hidden_field :customer_id %>
     <%= f.hidden_field :store_id %>
-    <%= f.submit %>
+    <%= f.submit class: "store_button" %>
 <% end %>
+</div>

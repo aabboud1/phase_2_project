@@ -1,5 +1,6 @@
-<h1> Update ~<%= @inventory.product.name %>~ Quantity Form </h1>
-
+<div style="margin-left: 10px">
+<h1 class="fireText"> Update <b><%= @inventory.product.name %>'s</b> Quantity </h1>
+<br>
 
 <% if @inventory.errors %>
     <% @inventory.errors.full_messages.each do |message| %>
@@ -9,11 +10,12 @@
 
 <%= form_for @inventory do |f| %>
     <%= f.hidden_field :store_id %>
-    <%= f.label :quantity, "Amount:" %>
+    <b><%= f.label :quantity, "Amount:" %></b>
     <%= f.number_field :quantity, in: 1.0..50.0, step: 1 %>
     <br><br>
-    <%= f.label "Cost (currently $" + @inventory.product.price.to_s + ")" %>
+    <b><%= f.label :num, "Cost (currently $" + number_with_precision(@inventory.product.price, precision: 2).to_s + ")" %></b>
     <!-- if we had more time, we could have each store have different values. womp womp -->
-    <%= number_field(@test, :price) %>
+    <%= number_field(@test, :price, step: 0.01) %>
     <%= f.submit %>
 <% end %>
+</div>
