@@ -1,26 +1,28 @@
-<h1><%= @product.name %></h1>
+<div style="margin-left: 10px;">
+<h1 class="fireText"><%= @product.name %></h1>
     
 <% if !!@product.type_of_product %>                   <!-- basically, if our product's type isn't nil -->
-    <p>Made By: <%= @product.type_of_product %></p>
+    <p><b>Made By:</b> <%= @product.type_of_product %></p>
 <% end %>
 
 <% if !!@product.price %>                               <!-- if our product has a price -->
-    <p>Price: $<%= @product.price %></p>
+    <p><b>Price:</b> $<%= @product.price %></p>
 <% else %>
     <p>No price specified.</p>
 <% end %>
 
 <% if @product.stores != [] %>                         <!-- if our product belongs to any store(s) -->
-    <p>Available At:</p>
+    <b>Available At:</b>
     <ul>
     <% @product.stores.each { |store| %>               <!-- damn, we're doing a lot of nested foreach statements today -->
-        <li><%= link_to(store.name, store_path(store)) %> - Quantity Available: <%= Inventory.find_by(store_id: store[:id], product_id: @product[:id]).quantity %></li>
+        <li style="font-weight: bold"><%= link_to(store.name, store_path(store)) %> (Quantity Available: <%= Inventory.find_by(store_id: store[:id], product_id: @product[:id]).quantity %>)</li>
     <% } %>
     </ul>
 <% else %>
-    <p>Currently unavailable!</p>                       <!-- if it doesn't belong to any stores, it's sold out -->
+    <p><b>Currently unavailable!</b></p>                       <!-- if it doesn't belong to any stores, it's sold out -->
 <% end %>
 
 <br><br>
 
 <%= button_to("Back to Product Directory", products_path, method: :get) %>
+</div>

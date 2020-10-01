@@ -24,6 +24,13 @@ Things you may want to cover:
 * ...
 
 
+----------
+AS OF 10/1, THINGS LEFT TO DO:
+-styling adjustments
+	-user show page
+	-potentially product show page? idk, we don't actually display this anymore
+
+
 ahmed:
 form (purchase)
 customer views (show, new, create) & controller actions
