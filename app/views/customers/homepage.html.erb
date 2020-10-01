@@ -1,3 +1,4 @@
+<div class="homepage">
 <%= flash[:message] %>
 
 <h1>Welcome to our App!</h1>
@@ -9,15 +10,15 @@
 <% end %>
 <br><br>
 <%= button_to("Product Directory", products_path, method: :get) %>
-<br><br>
+<br>
 <% store = Store.first %>
 <%= button_to("Store Page", store_path(store), method: :get) %>
-<br><br>
+<br>
 <% if manager? %>
     <h4><b>Manager Controls:</b></h4>
     <ul>
     <li><%= link_to("Adjust Product Inventory", store_owner_path(current_user.manager_of_store_id)) %></li>
     <!-- #MAKE SURE TO MAKE THIS LINK TO STORE'S INVENTORY PATH? IDK HOW WE'RE DOING THIS -->
-    <li>This Does Nothing, Just Proving I Can Make A List</li>
     </ul>
 <% end %>
+</div>
