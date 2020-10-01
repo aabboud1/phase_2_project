@@ -1,15 +1,16 @@
 <div class="storepage">
 <h1>Welcome to <%= @store.name %>!</h1>
 <b>Products Available:</b>
+<br><br>
 <ul style="padding: 0px;"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
-    <%= inventory.product.name %> - 
+    <b><%= inventory.product.name %></b> - 
     <% if inventory[:quantity] && inventory[:quantity] > 0 %>
         <%= inventory[:quantity] %> avaiable! 
-        <%= button_to("Buy Now for $" + inventory.product.price.to_s + "!", new_purchase_path(inventory), method: :get) %>
+        <%= button_to("Buy Now for $" + inventory.product.price.to_s + "!", new_purchase_path(inventory), method: :get, class: "store_button") %>
     <% else %>
-        SOLD OUT
+        <p class="fireText">SOLD OUT</p>
     <% end %>
     </li>
     <br>

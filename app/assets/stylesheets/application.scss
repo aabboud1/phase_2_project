@@ -16,10 +16,18 @@
 
  @import "bootstrap";
 
+body{
+    background: #FF5252;
+    background: -moz-linear-gradient(left, #FF5252 0%, #CBCBCB 50%, #B900FF 100%);
+    background: -webkit-linear-gradient(left, #FF5252 0%, #CBCBCB 50%, #B900FF 100%);
+    background: linear-gradient(to right, #FF5252 0%, #CBCBCB 50%, #B900FF 100%);
+}
+
 .header{
      text-align: right;
      padding-right: 50px;
-     
+     background-color: #333;
+     text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
  }
 
 .homepage{
@@ -37,4 +45,18 @@
     text-align: center;
     padding-top: 5%;
     list-style-position: inside;
+}
+
+.soldOut{
+    color: red;
+}
+
+.store_button{
+    color: aqua;
+    background-color: black;
+}
+
+b{
+    color: #EFEF00;
+    text-shadow: 1px 2px 2px #000000;
 }

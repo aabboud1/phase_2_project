@@ -1,16 +1,15 @@
 <div class="homepage">
 <%= flash[:message] %>
 
-<h1>Welcome to our App!</h1>
+<h1 class="fireText">Welcome to TarGit's Online Directory!</h1>
 
 <% if logged_in? %>
     <%= "Your name is " + current_user_name %>
 <% else %>
-    <%= link_to("Please log in!", login_path) %>
+    <%= link_to("Please log in to start buying!", login_path) %>
 <% end %>
 <br><br>
-<%= button_to("Product Directory", products_path, method: :get) %>
-<br>
+<!-- button_to("Product Directory", products_path, method: :get) -->
 <% store = Store.first %>
 <%= button_to("Store Page", store_path(store), method: :get, class: "store_button") %>
 <br>
