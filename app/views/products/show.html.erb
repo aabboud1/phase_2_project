@@ -1,7 +1,7 @@
 <h1><%= @product.name %></h1>
     
 <% if !!@product.type_of_product %>                   <!-- basically, if our product's type isn't nil -->
-    <p>Type: <%= @product.type_of_product %></p>
+    <p>Made By: <%= @product.type_of_product %></p>
 <% end %>
 
 <% if !!@product.price %>                               <!-- if our product has a price -->

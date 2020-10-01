@@ -1,7 +1,8 @@
 <div class="storepage">
 <h1 class="super">Welcome, Manager <%= current_user_name %>!</h1>
-<b><h3>Stock left:</h3></b>
 <br><br>
+<b><h3>Stock left:</h3></b>
+<br>
 <ul style="padding: 0px; list-style-type: none"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>

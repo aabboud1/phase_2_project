@@ -12,8 +12,12 @@ Store.destroy_all
 Customer.destroy_all
 Product.destroy_all
 
+coin_flip = ["Repo","Branch","Branch"] #2/3 of the time, our product is a branch. 1/3 of the time, it's a repo.
+
 10.times do
-    Product.create(name: Faker::Cannabis.strain, type_of_product: Faker::Cannabis.brand, price: rand(1..30))
+    first_name = Faker::Name.first_name
+    name = first_name + " " + Faker::Name.last_name
+    Product.create(name: first_name + "'s " + coin_flip.sample, type_of_product: name, price: rand(1..30))
 end
 
 target = Store.create(name: "TarGit", type_of_store: "Grocery", manager_code: "test")
@@ -29,11 +33,11 @@ end
 Customer.create(name: "Conrad", birth_year: 1995, balance: 100, password: "password", manager_of_store_id: target[:id])
 
 #DEBUG PRODUCT - way too expensive!
-p = Product.create(name: "Expensive Test Weed", type_of_product: "Debugging to make sure users can't buy out of their price range", price: 1000)
+p = Product.create(name: "Expensive Repo", type_of_product: "Debugging to make sure users can't buy out of their price range", price: 1000)
 Inventory.create(store_id: target[:id], product_id: p[:id], quantity: 100)
 
 #DEBUG PRODUCT - not in stores
-Product.create(name: "Secret Product", type_of_product: "Not in TarGit after seeding", price: 2)
+Product.create(name: "Secret Branch", type_of_product: "Not in TarGit after seeding", price: 2)
 
 
 

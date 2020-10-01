@@ -1,7 +1,8 @@
 <div class="storepage">
 <h1 class="super">Welcome to <%= @store.name %>!</h1>
-<b><h3>Products Available:</h3></b>
 <br><br>
+<b><h3>Products Available:</h3></b>
+<br>
 <ul style="padding: 0px; list-style-type: none;"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
