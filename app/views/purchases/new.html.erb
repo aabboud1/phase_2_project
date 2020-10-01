@@ -9,7 +9,7 @@
 
 <%= form_for @purchase do |f| %>
     <%= f.label :product, "Item to Purchase:" %>
-    <%= collection_select :purchase, :product_id, Product.all, :id, :name_and_price, include_blank: 'Select Item'%>
+    <%= collection_select :purchase, :product_id, @purchase.store.products, :id, :name_and_price, include_blank: 'Select Item'%>
     <br><br>
     <%= f.hidden_field :customer_id %>
     <%= f.hidden_field :store_id %>

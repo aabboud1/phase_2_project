@@ -1,14 +1,18 @@
-<h1>Welcome back</h1>
-<b>Stock left:</b>
-<ul><% @store.inventories.each{ |inventory| %>
+<div class="storepage">
+<h1 class="super">Welcome, Manager <%= current_user_name %>!</h1>
+<b><h3>Stock left:</h3></b>
+<br><br>
+<ul style="padding: 0px; list-style-type: none"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
-    <%= inventory.product.name %> - <%= inventory[:quantity] %> avaiable! 
-    <%= button_to("Update Inventory", edit_inventory_path(inventory), method: :get) %>
+    <b><%= inventory.product.name %></b> - <%= inventory[:quantity] %> avaiable! 
+    <%= button_to("Order More", edit_inventory_path(inventory), method: :get, class: "store_button") %>
     </li>
     <br>
 <% } %></ul>
 <br>
 
 <b>Want to order some different prodcuts?</b>
-<%= button_to("Add New Inventory", new_inventory_path(@store), method: :get) %>
+<%= button_to("Add New Inventory", new_inventory_path(@store), method: :get, class: "store_button") %>
+<br>
+</div>
