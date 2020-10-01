@@ -1,7 +1,7 @@
 <div class="storepage">
 <h1>Welcome to <%= @store.name %>!</h1>
 <b>Products Available:</b>
-<ul><% @store.inventories.each{ |inventory| %>
+<ul style="padding: 0px;"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
     <%= inventory.product.name %> - 
