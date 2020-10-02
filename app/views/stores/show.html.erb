@@ -3,6 +3,7 @@
 <br><br>
 <b><h3>Products Available:</h3></b>
 <br>
+<div style="overflow-y: auto; height: 500px; ">
 <ul style="padding: 0px; list-style-type: none;"><% @store.inventories.each{ |inventory| %>
     <li>
     <% @inventory = inventory %>
@@ -16,4 +17,5 @@
     </li>
     <br>
 <% } %></ul>
+</div>
 </div>

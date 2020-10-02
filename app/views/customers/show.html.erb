@@ -5,10 +5,11 @@
 <br><br>
 <b>Products Bought:</b>
 <br><br>
+<div style="overflow-y: auto; height: 150px;">
 <ul style="list-style-type: none">
 <% @customer.purchases.each do |purchase| %>
     <li><b><%= purchase.product.name %></b> for <b>$<%= number_with_precision(purchase.cost, precision: 2) %></b> on <b><%= purchase.print_time %></b></li>
 <% end %>
-
+</div>
 <!-- if we have duplicates, just put how many of that we've bought, rather than list twice -->
 </div>
