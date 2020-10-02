@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
         @customer = Customer.new(customer_params)
         if @customer.save
             session[:customer_id] = @customer.id
-            redirect_to products_path # customer home page, or purchase page
+            redirect_to homepage_path # customer home page, or purchase page
         else
             render :new
         end

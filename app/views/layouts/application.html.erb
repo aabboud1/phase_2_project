@@ -13,7 +13,7 @@
     <!-- #see 24-authorization for more info -->
     <div class="header">
       <% if logged_in? %>
-        Logged in as <%= link_to(current_user_name, customer_path(current_user)) %> -- Balance: $<%= current_user.balance %> | 
+        Logged in as <%= link_to(current_user_name, customer_path(current_user)) %> -- Balance: $<%= number_with_precision(current_user.balance, precision: 2) %> | 
 
         <% if manager? %>
           <% my_store = Store.find(current_user.manager_of_store_id) %>

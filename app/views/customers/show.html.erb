@@ -4,7 +4,8 @@
 <b>Current Balance: $<%= number_with_precision(@customer.balance, precision: 2) %></b>
 <br><br>
 <b>Products Bought:</b>
-<ul>
+<br><br>
+<ul style="list-style-type: none">
 <% @customer.purchases.each do |purchase| %>
     <li><b><%= purchase.product.name %></b> for <b>$<%= number_with_precision(purchase.cost, precision: 2) %></b> on <b><%= purchase.print_time %></b></li>
 <% end %>

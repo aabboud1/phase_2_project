@@ -18,7 +18,7 @@
 <%= f.password_field :password %>
 <br>
 <%= f.label "DEBUG PURPOSES: Balance in USD" %>
-<%= f.number_field :balance %>
+<%= f.number_field :balance, step: 0.01 %>
 <br>
 <%= f.label "Enter Manager Code (optional)" %>
 <%= f.text_field :manager_of_store_id %>
